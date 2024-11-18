@@ -16,6 +16,12 @@ This is an app where we are handling an App for a Fake Store, using the followin
     npx expo start
    ```
 
+3. Check the app!
+
+Use Expo Go (Android App or iOS App), or directly on web (http://localhost:8081). In both cases, make sure to be in the same wifi.
+
+
+
 Optional. In case of problems with cache, use -c flag
 
    ```bash

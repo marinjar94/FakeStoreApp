@@ -14,7 +14,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, title, price, image }) =>
   const navigation = useNavigation<NavigationProp>();
   return (
     <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('ProductDetails', { id: id })}>
-      <View style={styles.card}>
+      <View>
         <Image source={{ uri: image }} style={styles.image} />
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.price}>${price.toFixed(2)}</Text>
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     backgroundColor: '#fff',
     shadowColor: '#000',
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.5,
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
     elevation: 5,
