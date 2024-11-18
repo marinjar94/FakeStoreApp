@@ -13,8 +13,8 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ id, title, price, image }) => {
   const navigation = useNavigation<NavigationProp>();
   return (
-    <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('ProductDetails', { id: id })}>
-      <View>
+    <TouchableOpacity style={styles.containerOpacity} onPress={() => navigation.navigate('ProductDetails', { id: id })}>
+      <View style={styles.card}>
         <Image source={{ uri: image }} style={styles.image} />
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.price}>${price.toFixed(2)}</Text>
@@ -24,7 +24,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ id, title, price, image }) =>
 };
 
 const styles = StyleSheet.create({
-  card: {
+  containerOpacity: {
     flex: 1,
     alignItems: 'center',
     padding: 16,
@@ -36,6 +36,10 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowRadius: 8,
     elevation: 5,
+  },
+  card: {
+    flex: 1,
+    alignItems: 'center',
   },
   image: {
     width: 100,
