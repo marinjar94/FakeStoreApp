@@ -33,8 +33,7 @@ const LoginForm = () => {
       }
       const data = await response.json();
       dispatch(loginSuccess(data.token));
-      navigation.navigate('ProductList'); // Ensure this matches the screen name in _layout.tsx
-      Alert.alert('Login Successful', `Token: ${data.token}`);
+      navigation.navigate('ProductList');
     } catch (error) {
       if (error instanceof Error) {
         Alert.alert('Login Failed', error.message);

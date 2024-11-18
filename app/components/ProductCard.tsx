@@ -1,19 +1,25 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { NavigationProp } from '../types';
 
 interface ProductCardProps {
+  id: number;
   title: string;
   price: number;
   image: string;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ title, price, image }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ id, title, price, image }) => {
+  const navigation = useNavigation<NavigationProp>();
   return (
-    <View style={styles.card}>
-      <Image source={{ uri: image }} style={styles.image} />
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.price}>${price.toFixed(2)}</Text>
-    </View>
+    <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('ProductDetails', { id: id })}>
+      <View style={styles.card}>
+        <Image source={{ uri: image }} style={styles.image} />
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.price}>${price.toFixed(2)}</Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 

@@ -43,7 +43,7 @@ const ProductList: React.FC = () => {
         keyExtractor={(item) => item.id.toString()}
         numColumns={2}
         renderItem={({ item }) => (
-          <ProductCard title={item.title} price={item.price} image={item.image} />
+          <ProductCard title={item.title} price={item.price} image={item.image} id={item.id} />
         )}
         contentContainerStyle={styles.flatListContent}
       />

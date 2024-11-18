@@ -16,5 +16,12 @@ This is an app where we are handling an App for a Fake Store, using the followin
     npx expo start
    ```
 
+Optional. In case of problems with cache, use -c flag
+
+   ```bash
+    npx expo start -c
+   ```
+
+Fake Login Details are as of follow USERNAME= "mor_2314" password = "83r5^_" . Use these fake credentials to test App
 Important: Need to download "Expo Go" in order to easily see App without having to have iOS Simulator or Android Emulator
 
